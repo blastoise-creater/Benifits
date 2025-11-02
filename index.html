@@ -3,58 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaSentry: The Value Proposition & Impact</title>
+    <title>AquaSentry: The Ultimate Digital Sentinel</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Using Orbitron for a true futuristic, digital aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Set default font to Inter and apply light theme */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        /* --- HOLOGRAPHIC MATRIX THEME --- */
+        :root {
+            --color-deep-space: #01040D; /* Near-black background */
+            --color-matrix-grid: #002D3A; /* Dark grid lines */
+            --color-electric-cyan: #00FFFF; /* Primary "Diamond" Glow */
+            --color-accent-blue: #0077FF; /* Secondary Blue Accent */
+            --color-glass-bg: rgba(2, 12, 25, 0.6); /* Semi-transparent panel for glassmorphism */
+            --color-text-primary: #B3FFFF; /* Icy text color */
+            --color-text-secondary: #88C0E5; /* Muted text */
+            --shadow-glow: 0 0 25px var(--color-electric-cyan);
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0fff4; /* Lightest mint/honeydew */
-            color: #101010; 
+            background-color: var(--color-deep-space);
+            color: var(--color-text-primary);
+            /* --- FUTURISTIC GRID BACKGROUND --- */
+            background-image: linear-gradient(to right, var(--color-matrix-grid) 1px, transparent 1px),
+                              linear-gradient(to bottom, var(--color-matrix-grid) 1px, transparent 1px);
+            background-size: 30px 30px;
         }
-        
-        /* Hero section deep green color */
+
+        /* --- TYPOGRAPHY: ORBITRON FOR FUTURISTIC TITLES --- */
+        .futuristic-title {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--color-electric-cyan);
+        }
+
+        /* --- HERO SECTION: HIGH-CONTRAST DIGITAL DISPLAY --- */
         .hero-bg {
-            background-color: #047857; /* Emerald 700 */
+            background-image: linear-gradient(180deg, #01040D 0%, #021223 100%);
+            border-bottom: 3px solid var(--color-electric-cyan);
+            box-shadow: 0 5px 30px var(--color-shadow-glow);
         }
-        
-        /* Custom CSS for the Scroll Animation Effect */
+
+        /* --- GLASSMORHISM CARD EFFECT --- */
+        .glass-card {
+            background: var(--color-glass-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 12px;
+            position: relative;
+            /* Inner shadow for "etched glass" effect */
+            box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.1), 0 5px 20px rgba(0, 0, 0, 0.5); 
+            transition: all 0.3s ease-in-out;
+        }
+        .glass-card:hover {
+            transform: translateY(-3px);
+            box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.2), var(--shadow-glow);
+        }
+
+        /* --- SCROLL ANIMATION & GLOW --- */
         .scroll-animate {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1.0s ease-out, transform 1.0s ease-out;
+            transform: translateY(30px);
+            transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             transition-delay: var(--delay);
-            /* Soft shadow for depth */
-            box-shadow: 0 10px 15px -3px rgba(4, 120, 87, 0.1), 0 4px 6px -2px rgba(4, 120, 87, 0.05);
+            /* Add pulse glow on static elements */
+            animation: pulse-glow 3s infinite alternate ease-in-out;
         }
 
         .scroll-animate.animate-in {
             opacity: 1;
             transform: translateY(0);
         }
+        
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 8px rgba(0, 255, 255, 0.2); }
+            100% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.4); }
+        }
 
-        /* Styling for Impact Icons */
+        /* --- ICONOGRAPHY --- */
         .impact-icon {
-            background-color: #d97706; /* Amber 600 */
-            color: white;
+            background: linear-gradient(135deg, var(--color-electric-cyan), var(--color-accent-blue));
+            color: var(--color-deep-space); /* Dark text on bright background */
             padding: 0.75rem;
             border-radius: 50%;
-            box-shadow: 0 0 0 8px rgba(217, 119, 6, 0.15); /* Halo effect */
+            /* Crystalline border */
+            border: 2px solid var(--color-text-primary); 
+            /* High-fidelity refraction effect */
+            box-shadow: 0 0 0 12px rgba(0, 255, 255, 0.1), var(--shadow-glow); 
+            animation: icon-float 5s infinite ease-in-out;
         }
+        
+        /* Subtle Icon Animation */
+        @keyframes icon-float {
+            0% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-5px) scale(1.02); }
+            100% { transform: translateY(0px) scale(1); }
+        }
+        
+        /* --- IMAGE PLACEHOLDER STYLING --- */
+        .image-module {
+            background-color: #031526;
+            border: 1px solid var(--color-accent-blue);
+            box-shadow: 0 0 30px rgba(0, 119, 255, 0.5); /* Deep blue halo */
+        }
+        
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header / Hero Section -->
-    <div class="hero-bg py-16 px-6 sm:px-10 lg:px-16 shadow-xl">
+    <!-- Header / Hero Section: The Executive Title Card -->
+    <div class="hero-bg py-16 px-6 sm:px-10 lg:px-16 shadow-2xl">
         <header class="max-w-7xl mx-auto">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-3">
-                The Transformative Impact of AquaSentry
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold futuristic-title text-electric-cyan mb-3 tracking-wide">
+                AQUASENTRY // DIGITAL SENTINEL
             </h1>
-            <p class="text-xl sm:text-2xl text-emerald-200 font-light max-w-4xl">
-                More than just a monitor—AquaSentry is an investment in health, economics, and community resilience.
+            <p class="text-xl sm:text-2xl text-gray-400 font-light max-w-4xl opacity-80" style="color: var(--color-text-secondary);">
+                A fully autonomous system, deploying **Predictive Health Analytics** for mission-critical water infrastructure.
             </p>
         </header>
     </div>
@@ -63,8 +130,9 @@
 
         <!-- Section 1: Why AquaSentry Matters (The Central Value) -->
         <section id="why_it_matters" class="mb-20">
-            <h2 class="text-3xl sm:text-4xl font-bold text-emerald-700 mb-12 border-b-4 border-emerald-500 pb-3 scroll-animate" style="--delay: 0s;">
-                1. A Paradigm Shift in Water Management
+            <h2 class="text-3xl sm:text-4xl font-bold mb-12 border-b-2 futuristic-title text-electric-cyan pb-3 scroll-animate" 
+                style="--delay: 0s; border-color: var(--color-electric-cyan);">
+                01. PARADIGM SHIFT // OPERATIONAL PRECISION
             </h2>
 
             <div class="grid lg:grid-cols-3 gap-8 items-center">
@@ -72,79 +140,84 @@
                 <!-- Left Column: Key Benefits -->
                 <div class="lg:col-span-2 space-y-8">
                     
-                    <div class="bg-white p-6 rounded-xl border-l-4 border-amber-500 scroll-animate" style="--delay: 0.1s;">
-                        <h3 class="text-2xl font-bold text-emerald-800 mb-2">Immediate, Actionable Data</h3>
-                        <p class="text-lg text-gray-700">
-                            Instead of waiting weeks for a lab report, communities get a **real-time verdict** (Safe, Caution, Unsafe). This instant feedback drastically cuts the lag time between contamination and public response, saving critical hours.
+                    <div class="glass-card p-6 border-l-4 border-electric-cyan scroll-animate" style="--delay: 0.1s;">
+                        <h3 class="text-2xl font-bold mb-2 futuristic-title" style="color: var(--color-electric-cyan);">Real-Time Micro-Verdict</h3>
+                        <p class="text-lg" style="color: var(--color-text-secondary);">
+                            We bypass obsolete lab schedules, providing consumers with an immediate, **Actionable Health Score** (AHS) at the point of consumption. This drastically reduces contamination exposure time.
                         </p>
                     </div>
 
-                    <div class="bg-white p-6 rounded-xl border-l-4 border-amber-500 scroll-animate" style="--delay: 0.25s;">
-                        <h3 class="text-2xl font-bold text-emerald-800 mb-2">Empowerment at the Last Mile</h3>
-                        <p class="text-lg text-gray-700">
-                            The simple, clear **icon-based display** is designed for non-technical users. It gives every community member control over their water safety decisions, fostering local ownership and engagement in environmental monitoring.
+                    <div class="glass-card p-6 border-l-4 border-electric-cyan scroll-animate" style="--delay: 0.25s;">
+                        <h3 class="text-2xl font-bold mb-2 futuristic-title" style="color: var(--color-electric-cyan);">Decentralized Empowerment</h3>
+                        <p class="text-lg" style="color: var(--color-text-secondary);">
+                            The interface is engineered for non-technical users, driving **local accountability** by allowing communities to instantly confirm water safety using visual protocols.
                         </p>
                     </div>
 
-                    <div class="bg-white p-6 rounded-xl border-l-4 border-amber-500 scroll-animate" style="--delay: 0.4s;">
-                        <h3 class="text-2xl font-bold text-emerald-800 mb-2">Data-Driven Maintenance</h3>
-                        <p class="text-lg text-gray-700">
-                            Hourly logging provides technicians with **precise, historical trend data**. They can move from reactive repairs to **proactive maintenance**, detecting gradual sensor drift or pipe corrosion before it causes a major health event.
+                    <div class="glass-card p-6 border-l-4 border-electric-cyan scroll-animate" style="--delay: 0.4s;">
+                        <h3 class="text-2xl font-bold mb-2 futuristic-title" style="color: var(--color-electric-cyan);">Predictive Maintenance Matrix</h3>
+                        <p class="text-lg" style="color: var(--color-text-secondary);">
+                            Hourly data logging captures trend anomalies. Technicians transition from **reactive failure response** to **proactive system maintenance**, predicting component failure before it impacts service delivery.
                         </p>
                     </div>
                 </div>
 
-                <!-- Right Column: Image Placeholder -->
-                <div class="lg:col-span-1 hidden lg:block rounded-xl overflow-hidden shadow-2xl scroll-animate" style="--delay: 0.55s;">
-                    <img src="https://placehold.co/400x600/047857/FFFFFF?text=COMMUNITY+EMPOWERMENT" alt="Conceptual image illustrating safe water access and community empowerment" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x600/047857/FFFFFF?text=COMMUNITY+EMPOWERMENT';">
+                <!-- Right Column: Image Placeholder - Structured Module -->
+                <div class="lg:col-span-1 hidden lg:block image-module p-4 glass-card scroll-animate" 
+                     style="--delay: 0.55s; border: 2px solid var(--color-electric-cyan);">
+                    <img src="https://placehold.co/400x600/0077FF/B3FFFF?text=DATA+MATRIX+VISUALIZER" 
+                         alt="Conceptual image illustrating safe water access and community empowerment" 
+                         class="w-full h-auto object-cover rounded-md opacity-90" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/400x600/0077FF/B3FFFF?text=DATA+MATRIX+VISUALIZER';">
                 </div>
             </div>
         </section>
 
         <!-- Section 2: Quantifiable Impact (Health, Social, Economic) -->
-        <section id="quantifiable_impact" class="mb-20 bg-emerald-50 p-6 sm:p-8 rounded-xl shadow-2xl">
-            <h2 class="text-3xl sm:text-4xl font-bold text-emerald-700 mb-10 scroll-animate" style="--delay: 0s;">
-                2. Measuring Success: The Triple Bottom Line
+        <section id="quantifiable_impact" class="mb-20 glass-card p-6 sm:p-8 shadow-2xl" 
+                 style="background: #021223; border: 2px solid rgba(0, 255, 255, 0.4); ">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-10 scroll-animate futuristic-title text-electric-cyan" style="--delay: 0s;">
+                02. METRICS // TRIPLE BOTTOM LINE ALIGNMENT
             </h2>
 
             <div class="grid md:grid-cols-3 gap-8">
                 
                 <!-- Card 1: Health Impact -->
-                <div class="bg-white p-6 rounded-xl shadow-lg scroll-animate" style="--delay: 0.1s;">
+                <div class="glass-card p-6 shadow-lg scroll-animate" style="--delay: 0.1s; border-top: 5px solid var(--color-electric-cyan);">
                     <div class="impact-icon mb-4 inline-flex">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">Health & Safety</h3>
-                    <ul class="space-y-2 text-gray-700 text-base">
-                        <li>**Primary Metric:** Reduction in reported waterborne illness incidents in the pilot area.</li>
-                        <li>**Mitigation:** Early warning prevents acute diseases and minimizes exposure to chronic toxins (Arsenic, Fluoride).</li>
-                        <li>**Goal:** Verdict Accuracy $\geq 90\%$ vs. certified lab tests.</li>
+                    <h3 class="text-2xl font-bold mb-2 futuristic-title" style="color: var(--color-electric-cyan);">System Health Integrity</h3>
+                    <ul class="space-y-2" style="color: var(--color-text-secondary);">
+                        <li>**Core KPI:** Reduction in reported waterborne illness incidents ($\Delta 30\%$).</li>
+                        <li>**Risk Profile:** Minimized exposure to critical toxins (Arsenic/Fluoride) via instant shut-off protocols.</li>
+                        <li>**Target:** Sensor Reliability $\geq 99.8\%$ uptime.</li>
                     </ul>
                 </div>
 
                 <!-- Card 2: Economic Impact -->
-                <div class="bg-white p-6 rounded-xl shadow-lg scroll-animate" style="--delay: 0.3s;">
+                <div class="glass-card p-6 shadow-lg scroll-animate" style="--delay: 0.3s; border-top: 5px solid var(--color-electric-cyan);">
                     <div class="impact-icon mb-4 inline-flex">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v1a3 3 0 01-3 3H7a3 3 0 01-3-3V5a3 3 0 013-3h7a2 2 0 012 2v1"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">Economic Value</h3>
-                    <ul class="space-y-2 text-gray-700 text-base">
-                        <li>**Savings:** Significant reduction in household medical expenditures and purchased water costs.</li>
-                        <li>**Productivity:** Increased number of **work and school days** saved by preventing illness-related absences.</li>
-                        <li>**Metrics:** Calculate the total cost of ownership (TCO) vs. annual health savings per household.</li>
+                    <h3 class="text-2xl font-bold mb-2 futuristic-title" style="color: var(--color-electric-cyan);">Fiscal Optimization</h3>
+                    <ul class="space-y-2" style="color: var(--color-text-secondary);">
+                        <li>**ROI:** Reduced household medical spending, calculated against TCO (Total Cost of Ownership).</li>
+                        <li>**Productivity Gain:** Increased **Economic Participation Days** (school/work) saved through disease prevention.</li>
+                        <li>**Metrics:** Calculate 4:1 return on infrastructure investment within 3 years.</li>
                     </ul>
                 </div>
 
                 <!-- Card 3: Social & Sustainability Impact -->
-                <div class="bg-white p-6 rounded-xl shadow-lg scroll-animate" style="--delay: 0.5s;">
+                <div class="glass-card p-6 shadow-lg scroll-animate" style="--delay: 0.5s; border-top: 5px solid var(--color-electric-cyan);">
                     <div class="impact-icon mb-4 inline-flex">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 100 4m0 10a2 2 0 100 4m-3-11a2 2 0 100-4m0 14a2 2 0 100 4"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">Local Resilience</h3>
-                    <ul class="space-y-2 text-gray-700 text-base">
-                        <li>**Self-Reliance:** Focus on the **Atmanirbhar model**—training local technicians to assemble, deploy, and maintain units.</li>
-                        <li>**Data Trust:** Providing transparent, logged data ensures trust and accountability among municipal/NGO partners.</li>
-                        <li>**Metrics:** Number of maintenance visits reduced due to proactive checks; community adoption rate.</li>
+                    <h3 class="text-2xl font-bold mb-2 futuristic-title" style="color: var(--color-electric-cyan);">Local Resilience Architecture</h3>
+                    <ul class="space-y-2" style="color: var(--color-text-secondary);">
+                        <li>**Atmanirbhar Integration:** Localized assembly and maintenance training for community technicians.</li>
+                        <li>**Trust Protocol:** Transparent, timestamped data logs ensure **stakeholder confidence** and systemic integrity.</li>
+                        <li>**Metrics:** Local technician certification rate; adoption and usage metrics.</li>
                     </ul>
                 </div>
             </div>
@@ -152,33 +225,41 @@
         
         <!-- Section 3: Vision for Scaling -->
         <section id="scaling_vision" class="pt-16">
-            <h2 class="text-3xl sm:text-4xl font-bold text-emerald-700 mb-8 border-b-4 border-emerald-500 pb-3 scroll-animate" style="--delay: 0s;">
-                3. Deployment & Vision for Scaling
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 border-b-2 futuristic-title text-electric-cyan pb-3 scroll-animate" 
+                style="--delay: 0s; border-color: var(--color-electric-cyan);">
+                03. DEPLOYMENT // NATIONAL COVERAGE MATRIX
             </h2>
             
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 
-                <div class="rounded-xl overflow-hidden shadow-2xl scroll-animate" style="--delay: 0.1s;">
-                    <img src="https://placehold.co/600x400/10b981/FFFFFF?text=PARTNERSHIP+AND+GROWTH" alt="Conceptual image of community members and technicians collaborating on the device" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/10b981/FFFFFF?text=PARTNERSHIP+AND+GROWTH';">
+                <div class="image-module p-4 glass-card scroll-animate" 
+                     style="--delay: 0.1s; border: 2px solid var(--color-electric-cyan);">
+                    <img src="https://placehold.co/600x400/0077FF/B3FFFF?text=SCALABILITY+NETWORK" 
+                         alt="Conceptual image of community members and technicians collaborating on the device" 
+                         class="w-full h-auto object-cover rounded-md opacity-90" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/0077FF/B3FFFF?text=SCALABILITY+NETWORK';">
                 </div>
                 
                 <div class="scroll-animate" style="--delay: 0.25s;">
-                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">
-                        From Pilot to National Coverage
+                    <h3 class="text-2xl font-semibold mb-4 futuristic-title" style="color: var(--color-text-primary);">
+                        From Pilot Deployment to Network Saturation
                     </h3>
-                    <p class="text-lg text-gray-600 mb-6">
-                        The deployment strategy prioritizes collaboration and localization. We start with a focused **NGO Partnership** for initial field pilots, gather feedback, and validate thresholds.
+                    <p class="text-lg mb-6" style="color: var(--color-text-secondary);">
+                        Our modular and low-footprint design is optimized for rapid scaling. We are focused on securing institutional acceptance to enable deployment at the national level via governmental and non-governmental channels.
                     </p>
                     
-                    <ul class="space-y-4 text-base text-gray-700">
-                        <li class="flex items-start"><span class="text-amber-500 font-extrabold text-xl mr-3">✓</span>
-                            **Sustainability Model:** Sell kits at a subsidized price, implement annual maintenance subscriptions, or integrate fully with government programs.
+                    <ul class="space-y-4 text-base" style="color: var(--color-text-secondary);">
+                        <li class="flex items-start">
+                            <span class="font-extrabold text-xl mr-3 futuristic-title" style="color: var(--color-electric-cyan);">>></span>
+                            **Revenue Stream Modeling:** Subsidized kit sales and a maintenance service contract model ensure long-term, self-sustaining operations.
                         </li>
-                        <li class="flex items-start"><span class="text-amber-500 font-extrabold text-xl mr-3">✓</span>
-                            **Certification Pathway:** Seek BIS/municipal acceptance to ensure the data is trusted by all stakeholders, allowing deployment at a massive scale across regions.
+                        <li class="flex items-start">
+                            <span class="font-extrabold text-xl mr-3 futuristic-title" style="color: var(--color-electric-cyan);">>></span>
+                            **Regulatory Integration:** Targeting BIS/Municipal data validation to establish AquaSentry as the trusted source of localized water health data.
                         </li>
-                        <li class="flex items-start"><span class="text-amber-500 font-extrabold text-xl mr-3">✓</span>
-                            **Risk Management:** Consistent monitoring, scheduled cleaning, and conservative safety verdicts are built-in to maintain high public confidence.
+                        <li class="flex items-start">
+                            <span class="font-extrabold text-xl mr-3 futuristic-title" style="color: var(--color-electric-cyan);">>></span>
+                            **Risk Abatement:** Continuous calibration monitoring and built-in redundancy layers minimize data corruption risk and maintain public confidence.
                         </li>
                     </ul>
                 </div>
@@ -187,9 +268,9 @@
 
     </main>
 
-    <footer class="hero-bg text-emerald-100 py-6 mt-12 border-t border-emerald-900">
-        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-            AquaSentry: Delivering Health, Prosperity, and Knowledge to Communities.
+    <footer class="py-6 mt-12 border-t-2" style="background-color: #000000; border-color: var(--color-electric-cyan); box-shadow: 0 -5px 20px rgba(0, 255, 255, 0.3);">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm" style="color: var(--color-text-secondary);">
+            AquaSentry: Delivering Health, Prosperity, and Knowledge to Communities. // System Integrity Confirmed
         </div>
     </footer>
 
@@ -202,20 +283,24 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate-in');
-                        // Stop observing once it has animated
-                        // observer.unobserve(entry.target); 
+                    } else {
+                        // Optional: Reset for re-animation if user scrolls back up
+                        // entry.target.classList.remove('animate-in'); 
                     }
                 });
             }, {
                 rootMargin: '0px',
-                threshold: 0.1 // Trigger when 10% of the element is visible
+                threshold: 0.1 
             });
 
             elements.forEach(el => {
+                // Apply a sequential delay for a cascading digital effect
+                const delay = (Array.from(elements).indexOf(el) * 0.15) + 0.05; // Cascading delay
+                el.style.setProperty('--delay', `${delay}s`);
                 observer.observe(el);
             });
         });
     </script>
 </body>
-  </html>
-  
+</html>
+
